@@ -1,0 +1,56 @@
+{
+  "products": [
+    {
+      "name": "T-shirt with Tape Detail",
+      "id": 1,
+      "cost":"120",
+      "rating":[
+        {
+          "username":"example",
+          "star":"2",
+          "review":"review"
+        }
+      ],
+      "image": "https://imgur.com/m0rYO0n.png"
+    },
+    {
+      "name":"Skinny Fit Jeans",
+      "id":2,
+      "cost":"240",
+      "rating":[
+        {
+          "username":"example",
+          "star":"5",
+          "review":"review"
+        }
+      ],
+      "image":"https://imgur.com/x2gXtMc.png"
+    },
+    {
+      "name":"Checkered Shirt",
+      "id":3,
+      "cost":"180",
+      "rating":[
+        {
+          "username":"example",
+          "star":"5",
+          "review":"review"
+        }
+      ],
+      "image":"https://imgur.com/5Jnpxbb.png"
+    },
+    {
+      "name":"Sleeve Striped T-shirt",
+      "id":4,
+      "cost":"130",
+      "rating":[
+        {
+          "username":"example",
+          "star":"5",
+          "review":"review"
+        }
+      ],
+      "image":"https://imgur.com/92tdtf6.png"
+    }
+  ]
+}

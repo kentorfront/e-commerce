@@ -1,0 +1,80 @@
+.products-main{
+    font-family: 'Montserrat', sans-serif;
+    width: 1382px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-weight: 900;
+    margin-top: 56px;
+    font-size: 48px;
+    text-align: center;
+}
+
+ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+}
+
+li img{
+    border-radius: 20px;
+}
+
+li .name{
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+.ratingScore{
+    margin-left: 8px;
+    padding-top: 5px;
+    font-weight: 500;
+}
+
+.stars{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.star{
+    font-size: 24px;
+}
+
+.cost{
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+li{
+    list-style: none;
+}
+
+.filled-star{
+    color: yellow;
+}
+
+.fromFive{
+    color: black;
+    opacity: 60%;
+}
+
+.empty-star{
+    color: rgb(170, 170, 170);
+}
+
+.ViewAll{
+    width: 218px;
+    margin: 0 auto;
+    background: none;
+    border: 2px solid #00000010;
+    color: black;
+    margin-top: 36px;
+}
