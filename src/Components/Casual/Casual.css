@@ -1,0 +1,116 @@
+
+.casual-container{
+    width: 1382px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+.current-page{
+    color: rgba(0, 0, 0, 0.400);
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.current-page span{
+    color: black;
+}
+
+.current-page svg{
+    font-size: 25px;
+}
+
+.filter{
+    width: 295px;
+    height: 500px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.filter-wrapper{
+    width: 235px;
+    margin: 0 auto;
+}
+
+.filter-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.filter-top-title{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.filter-top svg{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.gor-line{
+    width: 100%;
+    height: 1px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.types{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.type{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    justify-content: space-between;
+}
+
+.type svg{
+    font-size: 20px;
+}
+
+.inputRange {
+    appearance: none;
+    width: 245px;
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #000000 30%, #f0f0f0 30%);
+    cursor: pointer;
+  }
+  
+  /* Thumb: for Chrome, Safari, Edge */
+  .inputRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+    background: #000000;
+    box-shadow: none;
+  }
+  
+  /* Thumb: for Firefox */
+  .inputRange::-moz-range-thumb {
+    border: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+    background: #000000;
+    box-shadow: none;
+  }
+
+.right-casual{
+    margin-left: 70px;
+}

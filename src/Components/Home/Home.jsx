@@ -2,6 +2,7 @@ import Header from "../Header/Header";
 import { Link } from 'react-router-dom';
 import './Home.css'
 import Products from "../Products/Products";
+import Footer from "../Footer/Footer";
 
  
 export default function Home(){
@@ -54,15 +55,17 @@ export default function Home(){
                 <div className="title">BROWSE BY DRESS STYLE</div>
                 <div className="category">
                     <div className="browse-top">
-                        <div className="casual"></div>
-                        <div className="formal"></div>
+                        <Link to='/shop/casual'><div className="casual"></div></Link>
+                        <Link><div className="formal"></div></Link>
                     </div>
                     <div className="browse-bottom">
-                        <div className="party"></div>
-                        <div className="gym"></div>
+                        <Link><div className="party"></div></Link>
+                        <Link><div className="gym"></div></Link>
                     </div>
                 </div>
             </div>
+
+            <Footer />
         </>
     )
 }

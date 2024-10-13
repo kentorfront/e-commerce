@@ -11,7 +11,8 @@ export default function Products() {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:8080/products/');
-        setInitialData(response.data);
+        let data = response.data[0].casual
+        setInitialData(data);
       } catch (error) {
         console.error('Error fetching data:', error);
         alert('Failed to fetch products. Please try again later.');
