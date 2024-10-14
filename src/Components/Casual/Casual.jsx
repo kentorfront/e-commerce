@@ -14,15 +14,18 @@ export default function Casual() {
 
     let [valuePrice, setValuePrice] = useState(40); // Initial value for range
     let [ratios, setRatios] = useState(0); // Initial ratio value
+    let [handleApply, setHandleApply] = useState(40)
 
     useEffect(() => {
         function calculateRatio(value) {
             const ratioValue = ((value - 40) / (400 - 40)) * 100;
             setRatios(ratioValue);
         }
-
         calculateRatio(valuePrice);
     }, [valuePrice]);
+    
+
+    
 
     return (
         <>
@@ -30,7 +33,7 @@ export default function Casual() {
             <div className="casual-container">
                 <div className="left-casual">
                     <div className="current-page">
-                        Home <MdKeyboardArrowRight /> <span>Casual</span>
+                        Home <MdKeyboardArrowRight /> Shop <MdKeyboardArrowRight /> <span>Casual</span>
                     </div>
                     <div className="filter">
                         <div className="filter-wrapper">
@@ -73,14 +76,15 @@ export default function Casual() {
                             <div className="gor-line"></div>
 
                             <div className="filter-row button">
-                                <button className="Apply">Apply filter</button>
+                            <button className="Apply" onClick={() => setHandleApply(valuePrice)}>Apply filter</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="right-casual">
-                    <CasualListContainer />                        
+                    <CasualListContainer price={handleApply}/>
                 </div>
+
             </div>
             <Footer />
         </>

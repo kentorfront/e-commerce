@@ -9,7 +9,7 @@ export default function Header(){
         <header>                
             <div className="top-header">Sign up and get 20% off to your first order.<Link>Sign Up Now</Link></div>
             <div className="header-wrapper">
-                <div className="logo"></div>
+                <Link to='/'><div className="logo"></div></Link>
                 <div className="links">
                     <Link to='/shop'>Shop</Link>
                     <Link to='/'>On Sale</Link>

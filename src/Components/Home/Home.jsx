@@ -16,7 +16,7 @@ export default function Home(){
                         FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
                     </div>
                     <div className="main-text">Browse through our diverse range of meticulously crafted garments, designed <br /> to bring out your individuality and cater to your sense of style.</div>
-                    <Link to='/'><button>Shop Now</button></Link>
+                    <Link to='/'><button className="ShopNow">Shop Now</button></Link>
                     <div className="info-card">
                         <div className="info1">
                             <div className="info-number">200+</div>
