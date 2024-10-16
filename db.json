@@ -1,4 +1,7 @@
 {
+  "users": [
+    
+  ],
   "products": [
     {
       "casual": [
@@ -899,6 +902,6 @@
           "image": "https://imgur.com/CgKxWti.png"
         }
       ]
-    }    
+    }
   ]
 }

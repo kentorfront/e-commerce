@@ -7,7 +7,7 @@ import './Header.css'
 export default function Header(){
     return(
         <header>                
-            <div className="top-header">Sign up and get 20% off to your first order.<Link>Sign Up Now</Link></div>
+            <div className="top-header">Sign up and get 20% off to your first order.<Link to='/register'>Sign Up Now</Link></div>
             <div className="header-wrapper">
                 <Link to='/'><div className="logo"></div></Link>
                 <div className="links">
