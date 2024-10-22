@@ -1,6 +1,12 @@
 {
   "users": [
-    
+    {
+      "email": "email@gmail.com",
+      "password": "$2a$10$zEQ7PCZQwxq93vpn7m/gSelHnUHBv8ukg5xcpP5naFx9pyUKye5ki",
+      "username": "username",
+      "image": "https://cdn.wallpapersafari.com/56/91/2qKJI6.jpg",
+      "id": 1
+    }
   ],
   "products": [
     {

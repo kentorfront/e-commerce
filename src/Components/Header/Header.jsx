@@ -6,8 +6,8 @@ import './Header.css'
 
 export default function Header(){
     return(
-        <header>                
-            <div className="top-header">Sign up and get 20% off to your first order.<Link to='/register'>Sign Up Now</Link></div>
+        <header style={{height: !localStorage.getItem('user') ? '140px' : '100px'}}>                
+            <div className="top-header" style={{display: !localStorage.getItem('user') ? 'flex' : 'none'}}>Sign up and get 20% off to your first order.<Link to='/register'>Sign Up Now</Link></div>
             <div className="header-wrapper">
                 <Link to='/'><div className="logo"></div></Link>
                 <div className="links">
@@ -22,7 +22,7 @@ export default function Header(){
                 </div>
                 <div className="profile-and-cart">
                     <Link to='/'><FaShoppingCart /></Link>
-                    <Link><MdAccountCircle /></Link>
+                    <Link to='/profile'><MdAccountCircle /></Link>
                 </div>
             </div>
         </header>

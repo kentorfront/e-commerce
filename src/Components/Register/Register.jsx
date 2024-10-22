@@ -1,19 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import axios from "axios";
 import { FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
 import { MdMail, MdPassword } from "react-icons/md";
+import axios from "axios";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./Register.css";
-import { setUser } from "../redux/registerSlice";
 
 export default function Register() {
     let [newUser, setNewUser] = useState({
         username: '',
         password: '',
         email: '',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlTp2SmRke8LbnDs4hmZqqavC64YYwVkQK-A&s',
     });
 
     let [error, setError] = useState({
@@ -27,7 +26,6 @@ export default function Register() {
 
     let [getData, setGetData] = useState('');
     let [eyes, setEyes] = useState(true);
-    let dispatch = useDispatch();
     let navigate = useNavigate();
 
     useEffect(() => {
@@ -45,8 +43,7 @@ export default function Register() {
     let handleRegister = async () => {
         try {
             const response = await axios.post('http://localhost:8080/register', newUser);
-            dispatch(setUser(newUser));
-            localStorage.setItem("user", JSON.stringify(response.data));
+            console.log(response.data)
             navigate('/login');
         } catch (error) {
             if (error.response.data.includes('Password' || 'password')) {
@@ -113,7 +110,7 @@ export default function Register() {
                         </div>
                     </div>
                     <button className="registerButton" onClick={handleRegister}>Register</button>
-                    <div className="login-reNavigate">Already have an account? <Link to="/">Login</Link></div>
+                    <div className="login-reNavigate">Already have an account? <Link to="/login">Login</Link></div>
                 </div>
             </section>
             <Footer />
