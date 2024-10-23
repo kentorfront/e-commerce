@@ -5,3 +5,11 @@
     width: 900px;
     transition: .5s ease;
 }
+
+.linkToPage{
+    transition: none;
+}
+
+.linkToPage:hover{
+    text-decoration: none;
+}
