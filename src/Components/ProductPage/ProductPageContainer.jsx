@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Preloader from "../Preloader/Preloader";
 import ProductPage from "./ProductPage";
 
 export default function ProductPageContainer() {
@@ -8,11 +9,10 @@ export default function ProductPageContainer() {
     const { id, type } = useParams();
 
     useEffect(() => {
-        const fetchData = () => {
+        const fetchData = async () => {
             try {
-                const res = axios.get("http://localhost:8080/products/");
-                console.log(res.data); // Log the response to see the structure
-                setData(res.data); // Setting the products data
+                const res = await axios.get("http://localhost:8080/products/");
+                setData(res.data[0]); 
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -20,17 +20,18 @@ export default function ProductPageContainer() {
         fetchData();
     }, []);
 
-    const filteredData = data[type]
-
-    console.log(filteredData);
+    let filteredData = data ? data[type].find(item => item.id === Number(id)) : null
 
     return (
         <>
-            {filteredData ? (
-                <ProductPage image={filteredData.image} />
-            ) : (
-                <p>Loading...</p>
-            )}
+            {filteredData ? 
+                (
+                    <ProductPage image={filteredData.image} cost={filteredData.cost} rating={filteredData.rating} name={filteredData.name}/>
+                ) :
+                (
+                    <Preloader />
+                )
+            }
         </>
     );
 }
