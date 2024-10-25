@@ -11,8 +11,8 @@ export default function ProductPageContainer() {
         const fetchData = () => {
             try {
                 const res = axios.get("http://localhost:8080/products/");
-                console.log(res.data); // Log the response to see the structure
-                setData(res.data); // Setting the products data
+                console.log(res.data); 
+                setData(res.data); 
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
