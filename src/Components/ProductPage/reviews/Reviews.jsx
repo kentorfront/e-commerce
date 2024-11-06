@@ -21,7 +21,7 @@ export default function Reviews({ reviews }){
                     <li className='review' key={index}>
                         <div className="stars-reviews">{stars(review.star)}</div>
                         <div className="name-review">{review.username}</div>
-                        <div className="review-data">{review.review}</div>
+                        <div className="review-data">"{review.review}"</div>
                         <div className="review-date">Posted in {review.date}</div>
                     </li>
                 )

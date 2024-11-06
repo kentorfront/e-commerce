@@ -8,13 +8,75 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment } from '../redux/counterSlice';
 import Reviews from './reviews/Reviews';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-export default function ProductPage({ image, cost, ratings, name, type }) {
+export default function ProductPage({ image, cost, ratings, name, type, id }) {
     const dispatch = useDispatch(); 
     const count = useSelector((state) => state.counter.value);
     let avgRating = useFindAvg(ratings)
     let [isWriteActive, setIsWriteActive] = useState(false)
+    let [starsActive, setStarsActive] = useState(1)
+    let [product, setProduct] = useState()
+    const [review, setReview] = useState('')
+
+    useEffect(() => { 
+        const fetchProduct = async () => { 
+            try { 
+                const response = await axios.get(`http://localhost:8080/products/`); 
+                setProduct(response.data); 
+            } 
+            catch (error) {
+                    console.error('Error fetching product:', error); 
+                } 
+            };
+                fetchProduct();
+
+        }, [id]);    
+                
+        const handleSubmit = async (e) => { 
+            e.preventDefault();
+        
+            let user = JSON.parse(localStorage.getItem('user')); // Ensure this is parsed from a JSON string
+        
+            const date = new Date();
+            const newReview = { 
+                email: user.email, 
+                username: user.username, 
+                star: starsActive, // Ensure we include the star rating
+                review, 
+                date: `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
+            };
+        
+            const updatedProduct = {
+                ...product[0][type].find(item => item.id === Number(id)), // Correctly find the product by id
+                rating: [
+                    ...product[0][type].find(item => item.id === Number(id)).rating, 
+                    newReview
+                ]
+            };
+        
+            const updatedProducts = {
+                ...product,
+                [0]: {
+                    ...product[0],
+                    [type]: product[0][type].map(item => item.id === Number(id) ? updatedProduct : item)
+                }
+            };
+        
+            console.log('Updated Products Payload:', updatedProducts[0]);
+        
+            try {
+                const response = await axios.put('http://localhost:8080/products/', updatedProducts[0]);
+                console.log('Response:', response);
+                alert('Review added successfully!');
+            } catch (error) {
+                console.error('Error updating product:', error.response || error);
+            }
+        };
+        
+        
+        
 
     let stars = (rating) => {
         let starImages = [];
@@ -83,15 +145,25 @@ export default function ProductPage({ image, cost, ratings, name, type }) {
                             All Reviews <span className='totalQuantity'>({ratings.length})</span>
                         </div>
                         <div className="right-header-review">
-                            <button className="write-review" onClick={() => setIsWriteActive(!isWriteActive)}>{isWriteActive === false ? 'Write review' : 'Cancel'}</button>
+                            <button className="write-review main-button" onClick={() => setIsWriteActive(!isWriteActive)}>{isWriteActive === false ? 'Write review' : 'Cancel'}</button>
                         </div>
                     </div>
                     {isWriteActive === false ?
 
                         <Reviews reviews={ratings}/> :
+
+                        <>
+                            <div className="starsToChange">
+                                {[1, 2, 3, 4, 5].map((value) => ( 
+                                    <button key={value} className={`button${value} buttonToAdd`} onClick={() => setStarsActive(value)} style={{ color: starsActive >= value ? '#FFC633' : '#F0F0F0' }} > ★ </button> 
+                                ))}
+                            </div>
+                            
+                            <input type="text" placeholder="Write More" className='allReviewInput' value={review} onChange={(e) => setReview(e.target.value)}/>
+
+                            <button className="main-button post" onClick={handleSubmit}>POST</button>
+                        </>
                         
-                        
-                        <input type="text" placeholder="Write More"/>
                     }
                     
                 </section>

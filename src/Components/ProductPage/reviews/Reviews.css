@@ -13,6 +13,8 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 50px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .reviews-container {
@@ -27,6 +29,14 @@
     break-inside: avoid; 
 }
 
+.main-button{
+    width: 166px;
+    height: 48px;
+    background-color: black;
+    color: white;
+    border-radius: 24px;
+}
+
 
 .review{
     border: 1px solid rgba(0, 0, 0, 0.100);
@@ -34,9 +44,63 @@
     height: 241px;
     border-radius: 20px;
     padding-left: 32px;
+    margin-top: 30px;
+    position: relative;
 }
 
 .stars-reviews{
     margin-top: 28px;
     margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
 }
+
+.name-review{
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.review-data{
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.review-date{
+    position: absolute;
+    bottom: 30px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+.review:first-child{
+    margin-top: 0;
+}
+
+.starsToChange{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.buttonToAdd{
+    font-size: 64px;
+    text-align: center;
+}
+
+.allReviewInput{
+    height: 50px;
+    width: 330px;
+    margin: 50px auto;
+    background-color: black;
+    border-radius: 24px;
+    border: none;
+    color: white;
+    padding-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+

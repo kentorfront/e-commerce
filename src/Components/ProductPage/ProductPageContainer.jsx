@@ -26,7 +26,7 @@ export default function ProductPageContainer() {
         <>
             {filteredData ? 
                 (
-                    <ProductPage image={filteredData.image} cost={filteredData.cost} ratings={filteredData.rating} name={filteredData.name} type={filteredData.type}/>
+                    <ProductPage image={filteredData.image} cost={filteredData.cost} ratings={filteredData.rating} name={filteredData.name} type={type} id={id}/>
                 ) :
                 (
                     <Preloader />
