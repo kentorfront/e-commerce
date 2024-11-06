@@ -11,7 +11,7 @@
       "email": "islambekserikkul1@gmail.com",
       "password": "$2a$10$kNHRm4upPi4TzgOrof3w8OVeh7RFsMY605Nc6ZFdXfdflnfjlv9ly",
       "username": "ksanix",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqGK3diR3Zi-mnOXEaj-3ewmFyRYVxGzVzZw&s",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7aNJtEd6xWZAMC-56tAzQbLOZqa3lL6YjcA&s",
       "id": 2
     }
   ],
@@ -25,14 +25,46 @@
           "type": "t-shirt",
           "rating": [
             {
-              "username": "example",
-              "star": "2",
-              "review": "review"
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
             },
             {
-              "username": "example",
-              "star": "2",
-              "review": "review"
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
+            },
+            {
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
+            },
+            {
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
+            },
+            {
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
+            },
+            {
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
+            },
+            {
+              "username": "name",
+              "star": "1",
+              "review": "review",
+              "date": "05.11.2024"
             }
           ],
           "image": "https://imgur.com/phH63k8.png"

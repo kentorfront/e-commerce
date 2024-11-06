@@ -6,6 +6,10 @@
     transition: .5s ease;
 }
 
+.costCasual{
+    font-size: 15px;
+}
+
 .linkToPage{
     transition: none;
 }

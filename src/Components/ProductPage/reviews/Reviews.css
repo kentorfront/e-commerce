@@ -1,0 +1,42 @@
+.ratings{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title{
+    text-align: center;
+}
+
+.all-reviews-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.reviews-container {
+    columns: 2;
+    column-gap: 20px; 
+    overflow: visible; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.reviews-container > * {
+    break-inside: avoid; 
+}
+
+
+.review{
+    border: 1px solid rgba(0, 0, 0, 0.100);
+    width: 588px;
+    height: 241px;
+    border-radius: 20px;
+    padding-left: 32px;
+}
+
+.stars-reviews{
+    margin-top: 28px;
+    margin-bottom: 0;
+}

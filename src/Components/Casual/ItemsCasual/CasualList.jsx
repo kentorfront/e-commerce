@@ -35,7 +35,7 @@ export default function CasualList({ productsData }) {
                                     <div className="fromFive">
                                         {product.rating[0].star} / 5
                                     </div>
-                                    <div className="cost">
+                                    <div className="costCasual">
                                         {product.cost}$
                                     </div>
                                 </div>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Products.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Products() {
   const [initialData, setInitialData] = useState([]);
-  const [displayedData, setDisplayedData] = useState([]);
-  const [visibleItemCount, setVisibleItemCount] = useState(4);
+  let navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,13 +21,6 @@ export default function Products() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    setDisplayedData(initialData.slice(0, visibleItemCount));
-  }, [initialData, visibleItemCount]);
-
-  const handleLoadMore = () => {
-    setVisibleItemCount(prevCount => prevCount + 4);
-  };
 
   const renderStars = (score) => {
     const stars = [];
@@ -46,7 +39,7 @@ export default function Products() {
       <div className="title">NEW ARRIVALS</div>
         <div className="products">
           <ul>
-            {displayedData.map((data, index) => (
+            {initialData.slice(0, 4).map((data, index) => (
               <li key={data.id || index}>
                 <div className="image-container">
                   <img src={data.image} alt={data.name} />
@@ -66,7 +59,7 @@ export default function Products() {
             ))}
           </ul>
         </div>
-        <button className='ViewAll' onClick={handleLoadMore}>View All</button>
+      <button className='ViewAll' onClick={() => navigate('/shop')}>View All</button>
     </div>
   );
 }

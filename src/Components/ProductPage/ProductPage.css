@@ -1,0 +1,99 @@
+.product-page-Main{
+    width: 1382px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.currentPageType{
+    text-transform: capitalize;
+}
+
+.sizes{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.size-button{
+    width: 86px;
+    height: 46px;
+    background-color: #f0f0f0;
+    margin-top: 16px;
+}
+
+.button-side-productInfo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.productImage{
+    width: 500px;
+    height: 530px;
+}
+
+.moreInfo{
+    margin-left: 40px;
+}
+
+.titleProductInfo{
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.stars{
+    margin-top: 0;
+    display: flex;
+    gap: 7px;
+}
+
+.from{
+    margin-left: 150px;
+}
+
+.cost{
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.add-to-cart{
+    display: flex;
+    flex-direction: row;
+}
+
+.quantity-container{
+    display: flex;
+    flex-direction: row;
+    width: 170px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 62px;
+    font-weight: 500;
+    gap: 20px;
+}
+
+.decrease, .increase{
+    font-size: 24px;
+    color: black;
+}
+
+.addToCart{
+    width: 400px;
+    height: 52px;
+    background-color: black;
+    color: white;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
